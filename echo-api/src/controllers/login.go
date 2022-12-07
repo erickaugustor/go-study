@@ -5,8 +5,8 @@ import (
 
 	"net/http"
 
-	"github.com/labstack/echo/v4"
 	"github.com/badoux/checkmail"
+	"github.com/labstack/echo/v4"
 )
 
 func IsEmailValid(email string) bool {
@@ -33,5 +33,5 @@ func Login(c echo.Context) error {
 
 	token, _ := utils.CreateToken(email)
 
-	return c.String(http.StatusOK, "Logged")
+	return c.String(http.StatusOK, token)
 }

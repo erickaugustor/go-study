@@ -1,10 +1,10 @@
-package auth
+package utils
 
 import (
-	"fmt"
-	"time"
-	"strings"
 	"errors"
+	"fmt"
+	"strings"
+	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
 )
@@ -46,9 +46,9 @@ func ValidateToken() error {
 func getToken() string {
 	token := "Bearer x"
 
-	if len(strings.Splint(token, " ")) == 2 {
+	if len(strings.Split(token, " ")) == 2 {
 		return strings.Split(token, " ")[1]
 	}
- 
+
 	return ""
 }
